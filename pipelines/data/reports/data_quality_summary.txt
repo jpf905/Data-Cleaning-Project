@@ -1,0 +1,26 @@
+=== Basic Dataset Summary ===
+Rows: 17139
+Columns: ['country_name', 'year', 'population', 'gdp', 'co2_emissions']
+
+=== Missing Values ===
+country_name         0
+year                 0
+population           0
+gdp               2861
+co2_emissions    16866
+dtype: int64
+
+=== Data Types ===
+country_name      object
+year               int64
+population       float64
+gdp              float64
+co2_emissions    float64
+dtype: object
+
+=== Numeric Summary ===
+                 count          mean           std           min           25%           50%           75%           max
+year           17139.0  1.989865e+03  2.461725e+01   1751.000000  1.975000e+03  1.991000e+03  2.007000e+03  2.023000e+03
+population     17139.0  3.122742e+08  1.114229e+09   2715.000000  1.066150e+06  7.045399e+06  5.169398e+07  8.061876e+09
+gdp            14278.0  2.725839e+12  1.366576e+13  11502.632645  2.297913e+09  1.757101e+10  2.332927e+11  1.054350e+14
+co2_emissions    273.0  1.772513e+03  2.752781e+03      3.000000  1.400000e+01  2.950000e+02  2.042000e+03  9.167000e+03

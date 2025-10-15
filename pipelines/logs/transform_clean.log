@@ -1,0 +1,23 @@
+2025-10-15 15:52:58,716 - INFO - ✅ Cleaned population_20251015.csv (16930 rows)
+2025-10-15 15:52:58,725 - INFO - ✅ Cleaned gdp_20251015.csv (13979 rows)
+2025-10-15 15:53:32,623 - INFO - Cleaned population_20251015.csv (16930 rows)
+2025-10-15 15:53:32,634 - INFO - Cleaned gdp_20251015.csv (13979 rows)
+2025-10-15 15:55:58,793 - INFO - Loading data/raw/population_20251015.csv
+2025-10-15 15:55:58,810 - INFO - ✅ Cleaned population_20251015.csv → 16930 rows
+2025-10-15 15:55:58,811 - INFO - Loading data/raw/gdp_20251015.csv
+2025-10-15 15:55:58,824 - INFO - ✅ Cleaned gdp_20251015.csv → 13979 rows
+2025-10-15 15:55:58,825 - INFO - Loading data/raw/co2_emissions_20251015.csv
+2025-10-15 15:57:31,986 - INFO - Loading data/raw/population_20251015.csv
+2025-10-15 15:57:32,001 - INFO - ✅ Cleaned population_20251015.csv → 16930 rows
+2025-10-15 15:57:32,002 - INFO - Loading data/raw/gdp_20251015.csv
+2025-10-15 15:57:32,016 - INFO - ✅ Cleaned gdp_20251015.csv → 13979 rows
+2025-10-15 15:57:32,016 - INFO - Loading data/raw/co2_emissions_20251015.csv
+2025-10-15 15:57:32,128 - INFO - ✅ Cleaned co2_emissions_20251015.csv → 260 rows
+2025-10-15 15:57:32,270 - INFO - ✅ Saved cleaned dataset: data/processed/clean_data.csv
+2025-10-15 15:58:52,618 - INFO - Loading data/raw/population_20251015.csv
+2025-10-15 15:58:52,634 - INFO - ✅ Cleaned population_20251015.csv → 16930 rows
+2025-10-15 15:58:52,635 - INFO - Loading data/raw/gdp_20251015.csv
+2025-10-15 15:58:52,648 - INFO - ✅ Cleaned gdp_20251015.csv → 13979 rows
+2025-10-15 15:58:52,649 - INFO - Loading data/raw/co2_emissions_20251015.csv
+2025-10-15 15:58:52,652 - INFO - ✅ Cleaned co2_emissions_20251015.csv → 260 rows
+2025-10-15 15:58:52,749 - INFO -  Saved cleaned dataset: data/processed/clean_data.csv
