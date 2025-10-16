@@ -1,36 +1,47 @@
 """
-Simplest possible loader: reads the cleaned CSV and stores it
-in a local DuckDB database file.
+Step 4: Load Cleaned Data into DuckDB (final version)
+-----------------------------------------------------
+Creates data/warehouse/data-cleaning.duckdb from processed CSV.
 """
 
 import duckdb
 from pathlib import Path
 
-DATA_PATH = Path("data/processed/clean_data.csv")
-DB_PATH = Path("data/warehouse/chaos_to_clean.duckdb")
+# ───────────────────────────────
+# Robust project-root path logic
+# ───────────────────────────────
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DATA_PATH = PROJECT_ROOT / "data" / "processed" / "clean_data.csv"
+DB_PATH = PROJECT_ROOT / "data" / "warehouse" / "data-cleaning.duckdb"
 
-# Check paths first
-if not DATA_PATH.exists():
-    raise FileNotFoundError(f"❌ CSV not found: {DATA_PATH.resolve()}")
+print(f" Project root detected: {PROJECT_ROOT}")
+print(f" Input CSV: {DATA_PATH}")
+print(f" Output DuckDB: {DB_PATH}")
+
+# Ensure directories exist
 DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-print(f"📥 Loading '{DATA_PATH}' into '{DB_PATH}' ...")
+# ───────────────────────────────
+# Load CSV into DuckDB
+# ───────────────────────────────
+def load_to_duckdb(csv_path=DATA_PATH, db_path=DB_PATH, table_name="clean_data"):
+    if not csv_path.exists():
+        raise FileNotFoundError(f" CSV file not found: {csv_path.resolve()}")
+    print(f" Loading {csv_path.name} into {db_path.name} ...")
 
-# Connect (creates DB file if needed)
-con = duckdb.connect(str(DB_PATH))
+    con = duckdb.connect(str(db_path))
+    con.execute(f"DROP TABLE IF EXISTS {table_name};")
+    con.execute(f"CREATE TABLE {table_name} AS SELECT * FROM read_csv_auto('{csv_path}');")
 
-# Drop & recreate the table
-con.execute("DROP TABLE IF EXISTS clean_data;")
-con.execute(f"CREATE TABLE clean_data AS SELECT * FROM read_csv_auto('{DATA_PATH}');")
+    count = con.execute(f"SELECT COUNT(*) FROM {table_name};").fetchone()[0]
+    print(f" Loaded {count:,} rows into table '{table_name}'")
 
-# Verify row count
-count = con.execute("SELECT COUNT(*) FROM clean_data;").fetchone()[0]
-print(f"✅ Loaded {count} rows into 'clean_data'")
+    sample = con.execute(f"SELECT * FROM {table_name} LIMIT 5;").fetchdf()
+    print("\n Sample rows:")
+    print(sample)
+    con.close()
 
-# Show a quick preview
-sample = con.execute("SELECT * FROM clean_data LIMIT 5;").fetchdf()
-print("\n🔎 Sample rows:")
-print(sample)
+    print(f"\n Database created at: {db_path.resolve()}")
 
-con.close()
-print("\n🏁 Done! DuckDB saved at:", DB_PATH.resolve())
+if __name__ == "__main__":
+    load_to_duckdb()
