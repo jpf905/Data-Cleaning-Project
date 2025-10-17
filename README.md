@@ -13,28 +13,11 @@ The result is a clean, reproducible ETL process and an interactive dashboard for
 * Delivered interactive visualizations via Streamlit
 * Demonstrated skills in data engineering and data science
 
-<img width="1719" height="933" alt="dashboard" src="https://github.com/user-attachments/assets/fa2e582d-80a1-4ec8-8735-d55fdd158272" />
-
-
 ---
 
 ### **Architecture**
 
-data-cleaning/
-├─ pipelines/
-│ ├─ extract_sources.py
-│ ├─ transform_clean.py
-│ ├─ load_to_duckdb.py
-│ ├─ validate_data.py
-│ └─ flow.py
-├─ app/
-│ └─ streamlit_app.py
-├─ data/
-│ ├─ raw/
-│ ├─ processed/
-│ ├─ warehouse/
-│ └─ reports/
-└─ README.md
+
 
 
 ---
