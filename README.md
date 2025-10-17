@@ -49,17 +49,26 @@ data-cleaning/
 
 ---
 
+
+--- ### **Data**
+
+The raw data for this project was collected from multiple open sources, primarily the World Bank Open Data (for GDP and population indicators) and Our World in Data (for CO₂ emissions data). Each dataset initially presented significant inconsistencies and formatting issues — such as differing country names, irregular year ranges, and missing or placeholder values (e.g., "..", "N/A"). Numeric columns were stored in varying units and scales, while some records included duplicated or incomplete entries. These discrepancies made it impossible to merge the datasets directly and required careful data cleaning, normalization, and schema alignment before integration into the unified analytical model.
+
+After processing through the transformation and validation pipeline, the data was consolidated into a single, standardized dataset stored in data/processed/clean_data.csv and loaded into DuckDB for analysis. All three sources — GDP, population, and CO₂ emissions — were normalized to share consistent country identifiers, year formats, and numeric scales. Missing values were handled systematically, out-of-range years were filtered, and duplicates were removed to ensure referential integrity. Column names were standardized to a unified schema (country_name, year, population, gdp, co2_emissions), enabling seamless SQL queries and reproducible analytics. The result is a clean, validated dataset that supports accurate cross-country and longitudinal analysis within the interactive dashboard.
+
+---
+
 ### **Pipeline Flow**
 
 | Step | Script | Description | Output |
 |------|---------|-------------|---------|
+| **1. Collect & Design Schema** | *(no script)* | Collect 2–3 related messy datasets (e.g., population, GDP, education). Normalize into a relational schema (e.g., countries, indicators, metrics). | `data/raw/` and schema plan |
 | **2. Extract** | `extract_sources.py` | Downloads raw CSVs | `data/raw/` |
 | **3. Transform + Clean** | `transform_clean.py` | Cleans, merges, validates schema | `data/processed/clean_data.csv` |
 | **4. Load** | `load_to_duckdb.py` | Loads data into DuckDB | `data/warehouse/data-cleaning.duckdb` |
 | **5. Validate** | `validate_data.py` | Automated QA checks | `data/reports/data_quality_summary.txt` |
 | **6. Automate** | `flow.py` | Prefect flow (end-to-end) | One-click ETL run |
 | **7. Visualize** | `streamlit_app.py` | Interactive dashboard | http://localhost:8501 |
-
 ---
 
 ### **Photos**
