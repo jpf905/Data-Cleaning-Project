@@ -50,7 +50,7 @@ data-cleaning/
 ---
 
 
---- ### **Data**
+### **Data**
 
 The raw data for this project was collected from multiple open sources, primarily the World Bank Open Data (for GDP and population indicators) and Our World in Data (for CO₂ emissions data). Each dataset initially presented significant inconsistencies and formatting issues — such as differing country names, irregular year ranges, and missing or placeholder values (e.g., "..", "N/A"). Numeric columns were stored in varying units and scales, while some records included duplicated or incomplete entries. These discrepancies made it impossible to merge the datasets directly and required careful data cleaning, normalization, and schema alignment before integration into the unified analytical model.
 
@@ -71,7 +71,7 @@ After processing through the transformation and validation pipeline, the data wa
 | **7. Visualize** | `streamlit_app.py` | Interactive dashboard | http://localhost:8501 |
 ---
 
-### **Photos**
+### **Visual Results (Photos)**
 
 ### Streamlit Dashboard
 ![Dashboard Screenshot](https://github.com/jpf905/Data-Cleaning-Project/blob/main/screenshots/dashboard.png)
@@ -84,3 +84,34 @@ After processing through the transformation and validation pipeline, the data wa
 
 ### Data Validation Summary
 ![Validation Screenshot](https://github.com/jpf905/Data-Cleaning-Project/blob/main/screenshots/validation_passed.png)
+
+---
+
+### **Reports Overview (Data Outputs)**
+
+---
+
+---
+
+### **Reports Overview**
+
+All generated reports and visual artifacts are stored in the [`data/reports/`](data/reports/) directory.  
+These outputs are automatically created each time the Prefect pipeline completes successfully.
+
+| File | Type | Description |
+|------|------|-------------|
+| [data_quality_summary.txt](data/reports/data_quality_summary.txt) | Validation Log | Results of automated data-quality checks (row counts, missing-value analysis, range validation) |
+| [top10_gdp.png](data/reports/top10_gdp.png) | Visualization | Top 10 GDP countries (latest available year) |
+| [global_co2_trend.png](data/reports/global_co2_trend.png) | Visualization | Global CO₂ emissions over time |
+| [gdp_vs_co2.png](data/reports/gdp_vs_co2.png) | Visualization | Relationship between GDP and CO₂ emissions |
+
+Each file serves as evidence of the pipeline’s completeness — confirming that data extraction, cleaning, loading, and validation were performed successfully.
+
+---
+
+
+### **Summary**
+
+This project represents a full end-to-end data-engineering and analytics workflow — from raw, inconsistent data to a validated and visually insightful product. By combining Prefect for orchestration, DuckDB for efficient local warehousing, and Streamlit for interactive visualization, it demonstrates how modern, lightweight tools can produce production-grade pipelines on a personal scale. The automated ETL process ensures data integrity, transparency, and reproducibility, while the dashboard provides an accessible way to explore global economic and environmental trends. Together, these components showcase a strong balance of data-engineering discipline and analytical storytelling.
+
+---
