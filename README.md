@@ -60,12 +60,3 @@ data-cleaning/
 
 ---
 
-### **Running the Pipeline Locally**
-
-1. **Set up environment**
-```bash
-conda create -n data-cleaning python=3.13 -y
-conda activate data-cleaning
-pip install -r requirements.txt
-python pipelines/flow.py
-streamlit run app/streamlit_app.py
