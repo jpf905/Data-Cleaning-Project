@@ -17,6 +17,23 @@ The result is a clean, reproducible ETL process and an interactive dashboard for
 
 ### **Architecture**
 
+```
+data-cleaning/
+├─ pipelines/
+│  ├─ extract_sources.py
+│  ├─ transform_clean.py
+│  ├─ load_to_duckdb.py
+│  ├─ validate_data.py
+│  └─ flow.py
+├─ app/
+│  └─ streamlit_app.py
+├─ data/
+│  ├─ raw/
+│  ├─ processed/
+│  ├─ warehouse/
+│  └─ reports/
+└─ README.md
+```
 
 
 
