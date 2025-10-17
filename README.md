@@ -89,12 +89,6 @@ After processing through the transformation and validation pipeline, the data wa
 
 ### **Reports Overview (Data Outputs)**
 
----
-
----
-
-### **Reports Overview**
-
 All generated reports and visual artifacts are stored in the [`data/reports/`](data/reports/) directory.  
 These outputs are automatically created each time the Prefect pipeline completes successfully.
 
