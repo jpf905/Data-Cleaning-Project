@@ -2,6 +2,7 @@
 
 ### **Overview**
 This project demonstrates a **complete data-engineering and data-science workflow** — from raw data collection to a fully validated and visualized dataset.
+<img width="1719" height="933" alt="dashboard" src="https://github.com/user-attachments/assets/fa2e582d-80a1-4ec8-8735-d55fdd158272" />
 
 Using **Prefect**, **DuckDB**, and **Streamlit**, the pipeline automates:
 > **Extract → Transform → Load → Validate → Visualize**
@@ -60,3 +61,12 @@ data-cleaning/
 
 ---
 
+### **Running the Pipeline Locally**
+
+1. **Set up environment**
+```bash
+conda create -n data-cleaning python=3.13 -y
+conda activate data-cleaning
+pip install -r requirements.txt
+python pipelines/flow.py
+streamlit run app/streamlit_app.py
