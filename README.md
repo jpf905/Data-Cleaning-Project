@@ -2,8 +2,6 @@
 
 ### **Overview**
 This project demonstrates a **complete data-engineering and data-science workflow** — from raw data collection to a fully validated and visualized dataset.
-<img width="1719" height="933" alt="dashboard" src="https://github.com/user-attachments/assets/fa2e582d-80a1-4ec8-8735-d55fdd158272" />
-
 Using **Prefect**, **DuckDB**, and **Streamlit**, the pipeline automates:
 > **Extract → Transform → Load → Validate → Visualize**
 
@@ -14,6 +12,9 @@ The result is a clean, reproducible ETL process and an interactive dashboard for
 * Implemented data quality validation using DuckDB SQL
 * Delivered interactive visualizations via Streamlit
 * Demonstrated skills in data engineering and data science
+
+<img width="1719" height="933" alt="dashboard" src="https://github.com/user-attachments/assets/fa2e582d-80a1-4ec8-8735-d55fdd158272" />
+
 
 ---
 
@@ -61,12 +62,16 @@ data-cleaning/
 
 ---
 
-### **Running the Pipeline Locally**
+### **Photos**
 
-1. **Set up environment**
-```bash
-conda create -n data-cleaning python=3.13 -y
-conda activate data-cleaning
-pip install -r requirements.txt
-python pipelines/flow.py
-streamlit run app/streamlit_app.py
+### Streamlit Dashboard
+![Dashboard Screenshot](https://github.com/jpf905/Data-Cleaning-Project/blob/main/screenshots/dashboard.png)
+
+### Prefect Pipeline Run 1
+![Prefect Pipeline Screenshot1](https://github.com/jpf905/Data-Cleaning-Project/blob/main/screenshots/pipeline_run1.png)
+
+### Prefect Pipeline Run 2
+![Prefect Pipeline Screenshot2](https://github.com/jpf905/Data-Cleaning-Project/blob/main/screenshots/pipeline_run2.png)
+
+### Data Validation Summary
+![Validation Screenshot](https://github.com/jpf905/Data-Cleaning-Project/blob/main/screenshots/validation_passed.png)
